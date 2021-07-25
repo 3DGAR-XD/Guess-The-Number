@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Adivina el número </title>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="presentation-container">
+      <h1> Adivina el número </h1>
+    </div>
+    <div class="presentation">
+    <p> Este juego consiste en adivinar el número generado aleatoriamente. Este número está en un rango de 1 al número que coloques en la casilla "número máximo a adivinar" la dificultad es relativa, entre mayor sea el número a adivinar, mayor será la dificultad y más probabilidad hay de que pierdas.</p>
+  </div>
+    <div class="rules-container">
+      <span> REGLAS </span>
+      <ul id="rules">
+      <li> 1. No puedes colocar 0 o dejar vacias alguna de las 2 casillas. </li>
+      <li> 2. No puedes usar letras que equivalen a números, las expersiones matemáticas las evaluará a 1. Estas casillas solo aceptan números</li>
+      <li> 3. Ganas si adivinas el número generado en menos de 3 intentos de lo contrario pierdes. </li>
+      <li> 4. Si encuentras el valor del número generado usando la consola u otros métodos, pierdes instantáneamente</li>
+      </ul>
+    </div>
+    <span id="fun"> DIVIERTETE ADIVINANDO EL NÚMERO ALEATORIO !! </span>
+    <div class="game">
+      <input id="input" type="number" placeholder="Número máximo a adivinar" value="">
+      <input id="button" type="button" value="Generar Número" onclick='generateNumber(document.getElementById("input").value)'>
+      <input id="input2" type="number" placeholder="Número Generado">
+      <input id="button2" type="button" value="Verificar Número" onclick='verifyNumber(number,document.getElementById("input2").value)'>
+      <p id="results"></p>
+    </div>
+    <a href = "https://3dgar-xd.github.io/Portfolio/" title= "3DGAR XD"> 3DGAR XD </a>
+    <span id="copyright"> © 3DGAR XD 2021 </span>
+    <a id = "thanks" href="mailto:ejlc2001@gmail.com" subject = "¡Hola! ..."> Si te gustó el juego déjame un mensaje :D </a>
+    <script src="js/script.js"></script>
+  </body>
+</html>
