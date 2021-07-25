@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: Mukta, sans-serif;
+}
+body {
+  margin: 0 3em;
+  background-color: #e6ebff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.presentation-container{
+  font-family: PT Sans, sans-serif;
+  background-color: #4d76ff;
+  width: 100vw;
+}
+h1 , p, li{
+  margin: 1em auto;
+}
+.rules-container span{
+  font-weight: 700;
+}
+li {
+  list-style: none;
+}
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input {
+  margin: 1.5em 1em 0;
+  width: 15em;
+  height: 2em;
+}
+a, #copyright{
+  position: absolute;
+  bottom: 1em;
+  margin: 0;
+}
+a{
+  left: 1em;
+}
+#copyright{
+  right: 1em;
+  font-style: oblique;
+}
+#thanks{
+  right: 1em;
+}
