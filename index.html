@@ -3,37 +3,38 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Adivina el número </title>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&family=PT+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <title> Adivina el número juego - 3DGAR XD</title>
+    <meta name="keywords" content="Guess the number, 3DGAR XD, Adivina el número, Juegos básicos en Javascript">
+    <meta name="robots" content="index, follow"/>
+    <meta name="author" content="Edgar Luna"/>
+    <meta name="copyright" content="- © 3DGAR XD 2021 -"/>
+    <meta name="description" content="Este es otro juego en el que tienes que adivinar el número para ganar. Pero aquí pones la dificultad dependiendo de qué tan alto sea el número que quieras adivinar">
+    <style>*{margin:0;padding:0;border:0;font-family:"Courier New",sans-serif}body{background-color:#ddd}h1{font-size:2em;font-weight:700;text-align:center;margin:1em}p{text-align:justify;margin:.5em 2em}h2{display:inline-block;width:100%;text-align:center;margin:.5em auto;font-size:1.5em}li{list-style:none}ol,strong{padding:0;display:grid;margin:0 2em}li,strong{margin:.5em 0}#game input{margin:.5em 0;width:100%;height:2em;border:1px solid#000;border-radius:.5em}#fun,footer,li{text-align:center}#fun{display:block;margin:1em;font-size:1.2em}#game{display:grid;width:70%;text-align-last:center;margin:2em auto;border:2px solid#000;border-radius:.5em;padding:1em;background-color:#fff;box-shadow:0 0 .5em#000}#game input[type=button]{cursor:pointer}footer{position:relative;width:100%;margin:3em 0 0}#copyright,a{text-decoration:none;margin:1em}#copyright{font-size:.8em}</style>
   </head>
   <body>
-    <div class="presentation-container">
-      <h1> Adivina el número </h1>
-    </div>
-    <div class="presentation">
+    <h1> Adivina el número </h1>
     <p> Este juego consiste en adivinar el número generado aleatoriamente. Este número está en un rango de 1 al número que coloques en la casilla "número máximo a adivinar" la dificultad es relativa, entre mayor sea el número a adivinar, mayor será la dificultad y más probabilidad hay de que pierdas.</p>
-  </div>
-    <div class="rules-container">
-      <span> REGLAS </span>
-      <ul id="rules">
-      <li> 1. No puedes colocar 0 o dejar vacias alguna de las 2 casillas. </li>
-      <li> 2. No puedes usar letras que equivalen a números, las expersiones matemáticas las evaluará a 1. Estas casillas solo aceptan números</li>
-      <li> 3. Ganas si adivinas el número generado en menos de 3 intentos de lo contrario pierdes. </li>
-      <li> 4. Si encuentras el valor del número generado usando la consola u otros métodos, pierdes instantáneamente</li>
-      </ul>
+      <h2> REGLAS </h2>
+      <ol id="rules">
+      <li>No puedes colocar 0 o dejar vacias alguna de las 2 casillas. </li>
+      <li>No puedes usar letras que equivalen a números, las expersiones matemáticas las evaluará a 1. <strong>ESTAS CASILLAS SOLO ACEPTAN NÚMEROS</strong> </li>
+      <li>Ganas si adivinas el número generado en menos de 3 intentos de lo contrario pierdes. </li>
+      <li>Si encuentras el valor del número generado usando la consola u otros métodos, pierdes instantáneamente</li>
+      </ol>
     </div>
     <span id="fun"> DIVIERTETE ADIVINANDO EL NÚMERO ALEATORIO !! </span>
-    <div class="game">
+    <div id="game">
       <input id="input" type="number" placeholder="Número máximo a adivinar" value="">
       <input id="button" type="button" value="Generar Número" onclick='generateNumber(document.getElementById("input").value)'>
       <input id="input2" type="number" placeholder="Número Generado">
       <input id="button2" type="button" value="Verificar Número" onclick='verifyNumber(number,document.getElementById("input2").value)'>
       <p id="results"></p>
     </div>
-    <a href = "https://3dgar-xd.github.io/Portfolio/" title= "3DGAR XD"> 3DGAR XD </a>
-    <span id="copyright"> © 3DGAR XD 2021 </span>
-    <a id = "thanks" href="mailto:ejlc2001@gmail.com" subject = "¡Hola! ..."> Si te gustó el juego déjame un mensaje :D </a>
-    <script src="js/script.js"></script>
+      <footer>
+        <a href = "https://3dgar-xd.github.io/Portfolio/" title= "3DGAR XD" target="_blank" rel="noopener" rel="noreferrer"> 3DGAR XD </a>
+        <span id="copyright"> © 3DGAR XD 2021 </span>
+        <a id = "thanks" href="mailto:ejlc2001@gmail.com" subject = "¡Hola! ..." target="_blank" rel="noopener" rel="noreferrer" title="e-mail">Si te gustó el juego déjame un mensaje</a>
+      </footer>
+    <script>let number="",attempts=0,generated=0,initialValueInput="";input2.disabled=!0,button2.disabled=!0;let generateNumber=e=>{generated++,number=Math.round(Math.random()*e+1),generated>1?(results.innerHTML="Has generado otro número, ahora ¡ADIVINALO!",game.style.backgroundColor="#fff"):(results.innerHTML="Has generado un numero, ahora ¡ADIVINALO!",game.style.backgroundColor="#fff"),input2.disabled=!1,button2.disabled=!1,initialValueInput=document.getElementById("input").value},verifyNumber=(e,t)=>{4==++attempts?(game.style.backgroundColor="#f00b",game.style.transition=".3s",results.innerHTML="No más, excediste el número de intentos, vuelve a generar un número diferente",input2.disabled=!0,button2.disabled=!0,input.value="",input2.value="",attempts=0,generated=0):""==e||""==input.value?(game.style.backgroundColor="#f00b",game.style.transition=".3s",results.innerHTML="Genera otro número, con este no puedes jugar, mira las reglas",input2.disabled=!0,button2.disabled=!0,input.value="",input2.value="",attempts=0,generated=0):initialValueInput!=input.value?(game.style.backgroundColor="#f00b",game.style.transition=".3s",results.innerHTML="No creo que puedas hacer eso",input2.disabled=!0,button2.disabled=!0,input.value="",input2.value="",attempts=0,generated=0):""==t?results.innerHTML="Ingresa el número que quieres comparar":e==t?(game.style.backgroundColor="#0f09",game.style.transition=".3s",results.innerHTML="FELICIDADES!! HAS GANADO",input2.disabled=!0,button2.disabled=!0,input.value="",input2.value="",attempts=0,generated=0):(results.innerHTML="Vuelve a intentarlo, sé que lo lograrás",input2.value="")};</script>
   </body>
 </html>
